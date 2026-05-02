@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Colorful Calculator</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .calculator {
+            background: #1e1e2f;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0px 10px 30px rgba(0,0,0,0.4);
+        }
+
+        .display {
+            width: 260px;
+            height: 60px;
+            font-size: 28px;
+            text-align: right;
+            border: none;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #000;
+            color: #fff;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        .btn {
+            width: 60px;
+            height: 60px;
+            margin: 5px;
+            font-size: 20px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* COLORS */
+        .purple { background: #9b59b6; color: white; }
+        .blue { background: #3498db; color: white; }
+        .green { background: #2ecc71; color: white; }
+        .red { background: #e74c3c; color: white; }
+        .gray { background: #7f8c8d; color: white; }
+
+        .equals {
+            background: linear-gradient(45deg, #ff6a00, #ff0000);
+            color: white;
+            font-weight: bold;
+        }
+
+        h2 {
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="calculator">
+    <form method="post">
+        <input class="display" name="expression" value="{{ expression }}" readonly>
+
+        <div class="row">
+            <button class="btn red" name="clear">AC</button>
+            <button class="btn purple" name="value" value="(">(</button>
+            <button class="btn purple" name="value" value=")">)</button>
+            <button class="btn blue" name="value" value="/">÷</button>
+        </div>
+
+        <div class="row">
+            <button class="btn gray" name="value" value="7">7</button>
+            <button class="btn gray" name="value" value="8">8</button>
+            <button class="btn gray" name="value" value="9">9</button>
+            <button class="btn blue" name="value" value="*">×</button>
+        </div>
+
+        <div class="row">
+            <button class="btn gray" name="value" value="4">4</button>
+            <button class="btn gray" name="value" value="5">5</button>
+            <button class="btn gray" name="value" value="6">6</button>
+            <button class="btn blue" name="value" value="-">-</button>
+        </div>
+
+        <div class="row">
+            <button class="btn gray" name="value" value="1">1</button>
+            <button class="btn gray" name="value" value="2">2</button>
+            <button class="btn gray" name="value" value="3">3</button>
+            <button class="btn blue" name="value" value="+">+</button>
+        </div>
+
+        <div class="row">
+            <button class="btn green" name="value" value="0">0</button>
+            <button class="btn green" name="value" value=".">.</button>
+            <button class="btn equals" name="equals">=</button>
+        </div>
+    </form>
+
+    <h2>{{ result }}</h2>
+</div>
+
+</body>
+</html>
